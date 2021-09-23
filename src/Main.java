@@ -23,6 +23,8 @@ public class Main {
         double dzielenie = first / second;
         System.out.println("wynik dzielenia to: " + dzielenie);
 
+        System.out.println("dupa nie kalkulator");
+
 
 
 

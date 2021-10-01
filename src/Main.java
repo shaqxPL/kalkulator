@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Witaj w kalkulatorze");
 
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Podaj pierwsza liczbe:");
         double first = scanner.nextDouble();
@@ -12,25 +13,22 @@ public class Main {
         System.out.println("Podaj druga liczbe:");
         double second = scanner.nextDouble();
 
+        System.out.println("wybierz dzialanie ");
+        System.out.println("dla dodawanie: +");
+        System.out.println("dla odejmowania: -");
+        System.out.println("dla mnozenia: *");
 
+        char answer = scanner.next().charAt(0);
 
-        double dodawanie = first + second;
-        System.out.println("wynik dodawania to: " + dodawanie);
-        double odejmowanie = first - second;
-        System.out.println("wynik odejmowania to: " + odejmowanie);
-        double mnozenie = first * second;
-        System.out.println("wynik mnozenia to: " + mnozenie);
-        double dzielenie = first / second;
-        System.out.println("wynik dzielenia to: " + dzielenie);
+        if (answer == '+') {
+            System.out.println("dodanie " + first + " i " + second + " rowna sie " + (first + second));
 
-        System.out.println("dupa nie kalkulator");
-
-
-
-
+        }else if (answer == '-') {
+            System.out.println("odjecie " + first + " i " + second + " rowna sie " + (first - second));
+        }else if (answer == '*') {
+            System.out.println("mnozenie " + first + " i " + second + " rowna sie " + (first * second));
+        }else {
+            System.out.println("zachowuj sie");
+        }
     }
-
-
-
-
 }

@@ -1,34 +1,25 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Witaj w kalkulatorze");
+    public static void main(String[] args){
 
+        Scanner scan=new Scanner(System.in);
 
-        System.out.println("Podaj pierwsza liczbe:");
-        double first = scanner.nextDouble();
+        System.out.print("Wprowadź liczbę, a ja sprawdzę czy jest parzysta: ");
+        int userInput=scan.nextInt();
 
-        System.out.println("Podaj druga liczbe:");
-        double second = scanner.nextDouble();
+        //tworzę tę zmienną po to, żeby dowiedzieć się czy liczba jest podzielna przez 2 (dzielenie modulo)
+        int oddOrEven = userInput%2;
 
-        System.out.println("wybierz dzialanie ");
-        System.out.println("dla dodawanie: +");
-        System.out.println("dla odejmowania: -");
-        System.out.println("dla mnozenia: *");
-
-        char answer = scanner.next().charAt(0);
-
-        if (answer == '+') {
-            System.out.println("dodanie " + first + " i " + second + " rowna sie " + (first + second));
-
-        }else if (answer == '-') {
-            System.out.println("odjecie " + first + " i " + second + " rowna sie " + (first - second));
-        }else if (answer == '*') {
-            System.out.println("mnozenie " + first + " i " + second + " rowna sie " + (first * second));
-        }else {
-            System.out.println("zachowuj sie");
+        //początek konstrukcji "switch". W skrócie, w nawiasie podajemy argument wejściowy do warunku
+        switch(oddOrEven){ //tutaj są dwa "case". "0" i "1". Czyli nasz switch zwróci nam wartość 0 albo 1.
+            case 0: //jeśli switch zwróci 0, to wykona się kod poniżej
+                System.out.println(userInput+" to parzysta liczba");
+                break;
+            case 1: //jeśli switch zwróci 1, to wykona się kod poniżej
+                System.out.println(userInput+" to nieparzysta liczba");
         }
     }
 }
+
